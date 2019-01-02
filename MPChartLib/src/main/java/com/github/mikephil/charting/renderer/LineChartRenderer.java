@@ -385,7 +385,7 @@ public class LineChartRenderer extends LineRadarRenderer {
             if (e1 != null) {
 
                 int j = 0;
-                for (int x = mXBounds.min; x < mXBounds.range + mXBounds.min; x++) {
+                for (int x = mXBounds.min; x <= mXBounds.range + mXBounds.min; x++) {
 
                     e1 = dataSet.getEntryForIndex(x == 0 ? 0 : (x - 1));
                     e2 = dataSet.getEntryForIndex(x);
