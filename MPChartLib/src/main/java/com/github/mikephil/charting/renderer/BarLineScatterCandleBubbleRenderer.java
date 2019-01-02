@@ -82,14 +82,14 @@ public abstract class BarLineScatterCandleBubbleRenderer extends DataRenderer {
         public void set(BarLineScatterCandleBubbleDataProvider chart, IBarLineScatterCandleBubbleDataSet dataSet) {
             float phaseX = Math.max(0.f, Math.min(1.f, mAnimator.getPhaseX()));
 
-            float low = chart.getLowestVisibleX();
-            float high = chart.getHighestVisibleX();
+//            float low = chart.getLowestVisibleX();
+//            float high = chart.getHighestVisibleX();
 
-            Entry entryFrom = dataSet.getEntryForXValue(low, Float.NaN, DataSet.Rounding.DOWN);
-            Entry entryTo = dataSet.getEntryForXValue(high, Float.NaN, DataSet.Rounding.UP);
+//            Entry entryFrom = dataSet.getEntryForXValue(low, Float.NaN, DataSet.Rounding.DOWN);
+//            Entry entryTo = dataSet.getEntryForXValue(high, Float.NaN, DataSet.Rounding.UP);
 
-            min = entryFrom == null ? 0 : dataSet.getEntryIndex(entryFrom);
-            max = entryTo == null ? 0 : dataSet.getEntryIndex(entryTo);
+            min = 0;// entryFrom == null ? 0 : dataSet.getEntryIndex(entryFrom);
+            max = 0;//entryTo == null ? 0 : dataSet.getEntryIndex(entryTo);
             range = (int) ((dataSet.getEntryCount() - 1) * phaseX);
         }
     }
