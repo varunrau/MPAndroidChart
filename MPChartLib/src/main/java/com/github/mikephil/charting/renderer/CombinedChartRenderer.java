@@ -105,6 +105,8 @@ public class CombinedChartRenderer extends DataRenderer {
 
     protected List<Highlight> mHighlightBuffer = new ArrayList<Highlight>();
 
+    protected boolean hasDrawnHighlight = false;
+
     @Override
     public void drawHighlighted(Canvas c, Highlight[] indices) {
 
@@ -124,6 +126,11 @@ public class CombinedChartRenderer extends DataRenderer {
                 data = ((ScatterChartRenderer)renderer).mChart.getScatterData();
             else if (renderer instanceof BubbleChartRenderer)
                 data = ((BubbleChartRenderer)renderer).mChart.getBubbleData();
+
+            if (hasDrawnHighlight) {
+                return;
+            }
+            hasDrawnHighlight = true;
 
             int dataIndex = data == null ? -1
                     : ((CombinedData)chart.getData()).getAllData().indexOf(data);
