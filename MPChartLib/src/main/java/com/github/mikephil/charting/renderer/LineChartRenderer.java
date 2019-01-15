@@ -694,6 +694,8 @@ public class LineChartRenderer extends LineRadarRenderer {
         LineData lineData = mChart.getLineData();
 
         for (Highlight high : indices) {
+            
+            System.out.println("DRAWING HIGHLIGHT IN LINE RENDERER X: " + high.getX() + ", Y : " + high.getY());
 
             ILineDataSet set = lineData.getDataSetByIndex(high.getDataSetIndex());
 
