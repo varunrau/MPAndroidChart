@@ -704,7 +704,7 @@ public class LineChartRenderer extends LineRadarRenderer {
             high.setDraw((float) pix.x, (float) pix.y);
 
             // draw the lines
-            drawHighlightLines(c, (float) pix.x, (float) pix.y, set);
+            //drawHighlightLines(c, (float) pix.x, (float) pix.y, set);
         }
     }
 
