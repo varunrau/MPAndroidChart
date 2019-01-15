@@ -713,6 +713,8 @@ public abstract class Chart<T extends ChartData<? extends IDataSet<? extends Ent
      */
     protected IMarker mMarker;
 
+    protected boolean hasDrawnMarkers = false;
+
     /**
      * draws all MarkerViews on the highlighted positions
      */
@@ -721,6 +723,11 @@ public abstract class Chart<T extends ChartData<? extends IDataSet<? extends Ent
         // if there is no marker view or drawing marker is disabled
         if (mMarker == null || !isDrawMarkersEnabled() || !valuesToHighlight())
             return;
+
+        if (hasDrawnMarkers) {
+            return;
+        }
+        hasDrawnMarkers = true;
 
         for (int i = 0; i < mIndicesToHighlight.length; i++) {
 
