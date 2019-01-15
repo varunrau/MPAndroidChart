@@ -56,6 +56,8 @@ public class LineChartRenderer extends LineRadarRenderer {
     protected Path cubicPath = new Path();
     protected Path cubicFillPath = new Path();
 
+    private boolean hasDrawnHighlighted = false;
+
     public LineChartRenderer(LineDataProvider chart, ChartAnimator animator,
                              ViewPortHandler viewPortHandler) {
         super(animator, viewPortHandler);
@@ -683,6 +685,11 @@ public class LineChartRenderer extends LineRadarRenderer {
 
     @Override
     public void drawHighlighted(Canvas c, Highlight[] indices) {
+
+        if (hasDrawnHighlighted) {
+            return;
+        }
+        hasDrawnHighlighted = true;
 
         LineData lineData = mChart.getLineData();
 
