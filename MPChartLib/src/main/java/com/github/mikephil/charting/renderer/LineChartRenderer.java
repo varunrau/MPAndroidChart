@@ -686,15 +686,10 @@ public class LineChartRenderer extends LineRadarRenderer {
     @Override
     public void drawHighlighted(Canvas c, Highlight[] indices) {
 
-        if (hasDrawnHighlighted) {
-            return;
-        }
-        hasDrawnHighlighted = true;
-
         LineData lineData = mChart.getLineData();
 
         for (Highlight high : indices) {
-            
+
             System.out.println("DRAWING HIGHLIGHT IN LINE RENDERER X: " + high.getX() + ", Y : " + high.getY());
 
             ILineDataSet set = lineData.getDataSetByIndex(high.getDataSetIndex());

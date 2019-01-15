@@ -128,10 +128,6 @@ public class CombinedChartRenderer extends DataRenderer {
             int dataIndex = data == null ? -1
                     : ((CombinedData)chart.getData()).getAllData().indexOf(data);
 
-            if (mHighlightBuffer.size() > 0) {
-                return;
-            }
-
             mHighlightBuffer.clear();
 
             for (Highlight h : indices) {
